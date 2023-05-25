@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+{% block title%} Recommendation - NCF & BPR{%endblock%}
+
+{%block styles%}
+<link rel="stylesheet" href="../static/css/recommend.css" />
+{%endblock%}
+
+
+{% block body %}
+<section id="body">
+  <div class="container-xl py-5">
+    <div class="content text-white row justify-content-center align-items-center text-left">
+      <div class="col-md-8">
+        <h2 class="headding text-center">Neural Collaborative Filtering and Bayesian Personalization Ranking
+          Recommendation System</h2>
+        <hr style="width: 50%; margin: auto; background-color: #aaa; height: 3px; border-radius: 50%;" />
+        <p class="mt-4">
+          Our recommendation system is based on advanced machine learning techniques such as neural collaborative
+          filtering and Bayesian personalization ranking. It utilizes these methods to recommend items to users based on
+          their past behavior and preferences. The system is designed to provide personalized recommendations that are
+          tailored to the individual user's interests and needs. By leveraging the power of advanced algorithms and data
+          analysis, your system can provide highly accurate and relevant recommendations to users, improving their
+          overall experience and satisfaction with the platform.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container my-5">
+    <div id="getReco" class="mt-5 w-50 mx-auto">
+      <form method="POST" id="recoForm" name="recoForm">
+          <div class="d-flex justify-content-center gap-3 input-wrapper">
+            <!-- Name input -->
+            <div class="form-floating mb-3 w-50">
+              <input type="text" class="form-control shadow-none" id="floatingInput" placeholder="User ID" name="user_id" required>
+              <label for="floatingInput">User ID <span class="sub-label">(from 1 to 73516)</span></label>
+            </div>
+            <!-- Model Select -->
+            <div class="form-floating w-25">
+              <select class="form-select shadow-none" id="floatingSelect" aria-label="Floating label select example" name="model_type">
+                <option value="NCF" selected>NCF</option>
+                <option value="BPR">BPR</option>
+              </select>
+              <label for="floatingSelect">Selected Model</label>
+            </div>
+          </div>
+          <!-- Button -->
+          <div class="form-group text-center">
+            <input type="submit" value="Get Recommendations" class="sub-btn">
+          </div>
+      </form>
+    </div>
+  </div>
+
+
+  <div class="container mt-5 recommended w-75 mb-5">
+    <div class="head">
+      <div class="title" style="line-height: 1;">Recommended Animes</div>
+      <hr style="background-color: #ddd; height: 3px; width: 40%;">
+    </div>
+    {% if reco_animes|length > 0 %}
+    <div class="body mt-5">
+      <p class="my-3"> Showing result of <u>{{model_type}}</u> model for user: {{user_id}}</p>
+      <div class="anime-items">
+        <div class="row">
+          {%for j in range(2)%}
+          <div class="col">
+            {%for i in range(5)%}
+            {% set index = j*5 + i %}
+            <a class="item" href="{{ url_for('routes.anime', anime_id=reco_animes[index]['anime_id'], title=reco_animes[index]['title']) }}">
+              <div class="inner">
+                <div class="poster">
+                  <span><img src="{{ reco_animes[index]['image_url'] }}" alt=""></span>
+                </div>
+                <div class="info my-auto">
+                  <div class="name d-title">{{ reco_animes[index]['title'] }}</div>
+                  <div class="meta">
+                    <span class="dot"><span class="meta-color">{{ reco_animes[index]['type'] }}</span> </span>
+                    <span class="dot"> <span class="meta-color">{{ reco_animes[index]['episodes'] }}</span></span>
+                    <span class="dot"><i class="fa-solid fa-heart meta-color"></i> <span class="meta-color">{{ reco_animes[index]['favorites'] }}</span></span>
+                    <span class="dot"> <span class="meta-color">{{ reco_animes[index]['rating'] }}</span></span>
+                  </div>
+                  <span>Rating: <span class="meta-color-score">{{ reco_animes[index]['score'] }}</span></span>
+                  <span>Status: <span class="meta-color-purple">{{ reco_animes[index]['status'] }}</span></span>
+                  <span>Genres: <span class="meta-color-purple">{{ reco_animes[index]['genres'] }}</span></span>
+                </div>
+              </div>
+            </a>
+            {%endfor%}
+          </div>
+          {%endfor%}
+        </div>
+      </div>
+    </div>
+    {%else%}
+		<div class="body mt-5">
+			<p><i> No Recommmended Items... </i></p>
+		</div>
+		{%endif%}
+  </div>
+</section>
+{%endblock%}

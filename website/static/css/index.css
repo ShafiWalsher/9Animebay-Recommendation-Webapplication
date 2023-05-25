@@ -1,0 +1,419 @@
+/* Default/Base Styles */
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+body,
+html {
+    font-size: 14px;
+    font-family: 'Nunito', 'Archivo', 'Open Sans', sans-serif;;
+}
+html {
+    font-family: sans-serif;
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Custom Scroll Bar */
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #1c1c1c;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #7c7c7c;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #8b8b8b;
+}
+
+
+
+.pb-5, .py-5 {
+    padding-bottom: 3rem!important;
+}
+.mt-5, .my-5 {
+    margin-top: 3rem!important;
+}
+a{
+    transition: color .3s,background .3s;
+    cursor: pointer;
+    color: #aaa;
+    text-decoration: none;
+    background-color: transparent;
+}
+div{
+    display: block;
+}
+#i-wrapper ul#i-menu {
+    margin: 0;
+    padding: 0;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+dl, ol, ul {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+body.index {
+    background: #050505;
+    font-size: 14px;
+}
+article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
+    display: block;
+}
+body.index .container {
+    max-width: 850px;
+    margin: 0 auto;
+}
+.container {
+    max-width: 1800px;
+    width: 100%;
+}
+[type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
+    cursor: pointer;
+}
+
+button, select {
+    text-transform: none;
+}
+button, input {
+    overflow: visible;
+}
+button, input, optgroup, select, textarea {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+button {
+    border-radius: 0;
+}
+.fa-solid, .fas {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+}
+.fa, .fa-brands, .fa-duotone, .fa-light, .fa-regular, .fa-solid, .fa-thin, .fab, .fad, .fal, .far, .fas, .fat {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: var(--fa-display,inline-block);
+    font-style: normal;
+    font-variant: normal;
+    line-height: 1;
+    text-rendering: auto;
+}
+.h3, h3 {
+    font-size: 1.75rem;
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+
+
+@media only screen and (min-width: 1450px){
+    .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+        max-width: 1320px;
+    }
+}
+
+@media only screen and (min-width: 1200px){
+    .container, .container-lg, .container-md, .container-sm, .container-xl {
+        max-width: 1140px;
+    }
+}
+
+@media only screen and (min-width: 992px){
+    .container, .container-lg, .container-md, .container-sm {
+        max-width: 960px;
+    }
+}
+
+@media only screen and (min-width: 768px){
+    .container, .container-md, .container-sm {
+        max-width: 720px;
+    }
+}
+
+@media only screen and (min-width: 576px){
+    .container, .container-sm {
+        max-width: 540px;
+    }
+}
+
+
+
+
+/* Top Section Styles */
+#i-wrapper #i-top {
+    background-image: url('../assets/bg.jpg');
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+    display: block;
+    min-height: 600px;
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+#i-wrapper #i-top .logo {
+    width: 250px;
+    height: 60px;
+    margin: 0 auto;
+}
+.logo {
+    background: url('../assets/logo.png') no-repeat;
+    background-size: contain;
+    display: block;
+    width: 9.6rem;
+    height: 2.7rem;
+    margin-bottom: 0.45rem;
+    transition: all .2s;
+}
+
+/* NAV MENU */
+#i-wrapper ul#i-menu {
+    margin: 0;
+    padding: 0;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+#i-wrapper ul#i-menu li {
+    display: inline-block;
+}
+#i-wrapper ul#i-menu li a {
+    color: #ddd;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 3px 12px;
+    display: block;
+}
+#i-wrapper ul#i-menu li a:hover {
+    color: #fbc32e;
+}
+
+/* NAV MENU END  */
+
+#i-wrapper header {
+    position: static;
+    border-radius: 5px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 5;
+}
+header {
+    width: 100%;
+    z-index: 50;
+    transition: background .2s;
+    margin-bottom: 10px;
+    background: #1c1c1c;
+    position: absolute;
+}
+
+
+/* Search Box Styles */
+header #search form {
+    position: relative;
+    display: flex;
+    background-color: #141414;
+    font-size: 1.1rem;
+    padding: 0 10px;
+    height: 36px;
+    line-height: 36px;
+    border-radius: 0.5rem;
+}
+header #search form button {
+    font-size: 1.5rem;
+    z-index: 3;
+    transition: color .2s;
+}
+header #search form button, header #search form input {
+    background: 0 0;
+    border: none;
+    color: #666;
+    outline: 0;
+}
+#search.show form input {
+    padding-right: 30px;
+}
+header #search form input {
+    z-index: 3;
+    font-weight: 500;
+    color: #aaa;
+    flex-grow: 1;
+    padding: 0 10px;
+}
+header #search form .tip {
+    display: flex;
+    align-items: center;
+    color: #595959;
+    font-weight: 500;
+    transition: all .3s;
+    white-space: nowrap;
+}
+header #search form .tip .icon {
+    color: #595959;
+    width: 1.3em;
+    height: 1.3em;
+}
+header svg {
+    width: 1.6em;
+    height: 1.6em;
+}
+svg {
+    width: 1rem;
+    height: 1rem;
+}
+svg {
+    overflow: hidden;
+    vertical-align: middle;
+}
+svg:not(:root) {
+    overflow-clip-margin: content-box;
+    overflow: hidden;
+}
+:not(svg) {
+    transform-origin: 0px 0px;
+}
+header #search form .tip span {
+    padding: 0 8px;
+}
+#search .search-popup {
+    display: none;
+    background: #171717;
+    position: absolute;
+    padding-top: 39.6px;
+    top: -1;
+    left: -1px;
+    right: -1px;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    font-size: 1.1rem;
+    line-height: normal;
+    border: 1px solid #292929;
+}
+
+#search .search-popup .s-close {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    font-size: 1.1rem;
+    line-height: 1.1rem;
+    border-bottom: 1px solid #666;
+    cursor: pointer;
+    color: #666;
+    transition: all .2s;
+}
+.head-box {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1rem;
+    line-height: 1rem;
+    border-bottom: 1px solid #292929;
+    padding: 10px 15px 0;
+}
+.head-box .tabs-sm {
+    display: flex;
+    color: #666;
+}
+.head-box .tabs-sm .tab.active, .head-box .tabs-sm .tab:hover {
+    color: #aaa;
+}
+.head-box .tabs-sm .tab {
+    cursor: pointer;
+    margin-right: 10px;
+    font-weight: 600;
+    transition: color .2s;
+    padding-bottom: 8px;
+    position: relative;
+    color: #777;
+}
+#search .search-popup .body {
+    padding: 0;
+}
+#search .search-popup .foot {
+    background: #202020;
+    color: #666;
+    padding: 0 15px;
+    line-height: 3.5rem;
+    font-size: 1.1rem;
+    overflow: hidden;
+}
+#search .search-popup .foot .nav-tip {
+    float: left;
+}
+#search .search-popup .foot .nav-tip>span {
+    margin-right: 10px;
+}
+#search .search-popup .foot .nav-tip .icon {
+    width: 1.35em;
+    height: 1.35em;
+}
+/* SerachBox Styles Close */
+
+#i-wrapper .i-gohome {
+    background: url('../assets/bg-top.png') no-repeat center center;
+    background-size: contain;
+    min-height: 450px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+#i-wrapper .i-gohome a {
+    background: #fbc32e;
+    height: 60px;
+    line-height: 60px;
+    padding: 0 20px;
+    margin-top: 5%;
+    border-radius: 50rem;
+    font-size: 1.4rem;
+    color: #222;
+    font-weight: 600;
+}
+#i-wrapper .i-gohome a i {
+    vertical-align: middle;
+    font-size: 2.5rem;
+}
+/* Index page content */
+#i-wrapper #i-bottom .heading {
+    color: #ddd;
+    margin-top: 20px;
+}
+h3 {
+    display: block;
+    font-size: 1.75rem;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: 400;
+}
+p {
+    color: #aaaaaa;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+
+/* SHARE BUTTONS */

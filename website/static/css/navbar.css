@@ -1,0 +1,408 @@
+header.fixed {
+    background: #1c1c1c;
+    margin-top: 0;
+    position: fixed;
+}
+header {
+    width: 100%;
+    z-index: 50;
+    transition: background .2s;
+    margin-bottom: 10px;
+    background: #1c1c1c;
+    position: absolute;
+}
+header a {
+    font-size: 1.3rem !important;
+    font-weight: 600 !important;
+}
+
+.justify-content-around {
+    justify-content: space-around!important;
+}
+.align-items-center {
+    align-items: center!important;
+}
+.justify-content-between {
+    justify-content: space-between!important;
+}
+.justify-content-end {
+    justify-content: flex-end!important;
+}
+
+.container {
+    max-width: 1800px;
+    width: 100%;
+}
+@media only screen and (min-width: 1450px){
+    .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+        max-width: 1320px;
+    }
+    
+}
+
+@media only screen and (min-width: 1200px){
+    .container, .container-lg, .container-md, .container-sm, .container-xl {
+        max-width: 1140px;
+    }
+}
+
+@media only screen and (min-width: 992px){
+    .container, .container-lg, .container-md, .container-sm {
+        max-width: 960px;
+    }
+}
+
+@media only screen and (min-width: 768px){
+    .container, .container-md, .container-sm {
+        max-width: 720px;
+    }
+}
+
+@media only screen and (min-width: 576px){
+    .container, .container-sm {
+        max-width: 540px;
+    }
+}
+
+.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+    width: 100%;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+header.fixed .wrapper {
+    border-radius: 0;
+}
+header .wrapper {
+    width: 100%;
+    display: flex;
+    height: 5rem;
+    position: relative;
+    padding: 0 60px;
+}
+
+header .wrapper .start {
+    width: 35%;
+    height: 100%;
+}
+header .wrapper .main-menu, header .wrapper>div {
+    display: flex;
+    align-items: center;
+}
+.d-flex {
+    display: flex!important;
+}
+
+header .wrapper .end {
+    flex-grow: 1;
+    height: 100%;
+}
+
+
+header .logo {
+    background: url('../assets/logo.png') no-repeat center;
+    background-size: contain;
+    display: block;
+    width: 15rem;
+    height: 5rem;
+    transition: all .2s;
+}
+header .logo a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+header #search {
+    display: block;
+    flex-grow: 1;
+}
+
+header #quick-menu {
+    width: 40%;
+    display: flex;
+    align-items: center;
+}
+
+
+/* Search Form Styles */
+header #search form {
+    position: relative;
+    display: flex;
+    background-color: #141414;
+    font-size: 1.1rem;
+    padding: 0 10px;
+    height: 36px;
+    line-height: 36px;
+    border-radius: 0.5rem;
+}
+header #search form button {
+    font-size: 1.5rem;
+    z-index: 3;
+    transition: color .2s;
+}
+header #search form button, header #search form input {
+    background: 0 0;
+    border: none;
+    color: #666;
+    outline: 0;
+}
+#search.show form input {
+    padding-right: 30px;
+}
+header #search form input {
+    z-index: 3;
+    font-weight: 500;
+    color: #aaa;
+    flex-grow: 1;
+    padding: 0 10px;
+}
+header #search form .tip {
+    display: flex;
+    align-items: center;
+    color: #595959;
+    font-weight: 500;
+    transition: all .3s;
+    white-space: nowrap;
+}
+header #search form .tip .icon {
+    color: #595959;
+    width: 1.3em;
+    height: 1.3em;
+}
+header svg {
+    width: 1.6em;
+    height: 1.6em;
+}
+svg {
+    width: 1rem;
+    height: 1rem;
+}
+svg {
+    overflow: hidden;
+    vertical-align: middle;
+}
+svg:not(:root) {
+    overflow-clip-margin: content-box;
+    overflow: hidden;
+}
+:not(svg) {
+    transform-origin: 0px 0px;
+}
+header #search form .tip span {
+    padding: 0 8px;
+}
+#search .search-popup {
+    display: none;
+    background: #171717;
+    position: absolute;
+    padding-top: 39.6px;
+    top: -1;
+    left: -1px;
+    right: -1px;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    font-size: 1.1rem;
+    line-height: normal;
+    border: 1px solid #292929;
+}
+
+#search .search-popup .s-close {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    font-size: 1.1rem;
+    line-height: 1.1rem;
+    border-bottom: 1px solid #666;
+    cursor: pointer;
+    color: #666;
+    transition: all .2s;
+}
+.head-box {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1rem;
+    line-height: 1rem;
+    border-bottom: 1px solid #292929;
+    padding: 10px 15px 0;
+}
+.head-box .tabs-sm {
+    display: flex;
+    color: #666;
+}
+.head-box .tabs-sm .tab.active, .head-box .tabs-sm .tab:hover {
+    color: #aaa;
+}
+.head-box .tabs-sm .tab {
+    cursor: pointer;
+    margin-right: 10px;
+    font-weight: 600;
+    transition: color .2s;
+    padding-bottom: 8px;
+    position: relative;
+    color: #777;
+}
+#search .search-popup .body {
+    padding: 0;
+}
+#search .search-popup .foot {
+    background: #202020;
+    color: #666;
+    padding: 0 15px;
+    line-height: 3.5rem;
+    font-size: 1.1rem;
+    overflow: hidden;
+}
+/* Form Styles End */
+
+/* Header Menus */
+header .wrapper .main-menu, header .wrapper>div {
+    display: flex;
+    align-items: center;
+}
+header .main-menu {
+    font-weight: 600;
+    color: #aaa;
+    font-size: 1.15rem;
+    transition: all .2s;
+}
+
+
+/* Right side of Navbar styles */
+
+.top-profile .user .avatar {
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.top-profile .user .avatar img {
+    width: 100%;
+    height: 100%;
+}
+
+.dropdown, .dropleft, .dropright, .dropup {
+    position: relative;
+}
+.user.dropdown .dropdown-menu {
+    padding-bottom: 0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.dropdown-menu.pull-right {
+    right: 0;
+    left: auto;
+}
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    float: left;
+    min-width: 10rem;
+    padding: 0.5rem 0;
+    margin: 0.125rem 0 0;
+    font-size: 1rem;
+    color: #777;
+    text-align: left;
+    list-style: none;
+    background-color: #242424;
+    background-clip: padding-box;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: 5px;
+}
+.user.dropdown .dropdown-menu .dropdown-item {
+    padding: 7px 20px;
+}
+.dropdown-item {
+    display: block;
+    width: 100%;
+    padding: 0.25rem 1.5rem;
+    clear: both;
+    font-weight: 300;
+    color: #848484;
+    text-align: inherit;
+    white-space: nowrap;
+    background-color: transparent;
+    border: 0;
+    font-size: 1rem !important;
+}
+.user.dropdown .dropdown-menu .dropdown-item:hover{
+    color: #222222 !important;
+}
+
+.user.dropdown .dropdown-menu .logout {
+    background: #141414;
+    padding: 10px 20px;
+}
+.user.dropdown .dropdown-menu .logout:hover {
+    color: #fbc32e !important;
+}
+
+
+
+
+
+/* Search Result styling */
+
+#search .search-popup .body .items .item:nth-child(2n+1) {
+    background: #1c1c1c;
+}
+#search .search-popup .body .items .item {
+    display: flex;
+    padding: 15px 15px;
+    position: relative;
+}
+.scaff.items .item {
+    display: flex;
+    position: relative;
+}
+#search .search-popup .body .items .item .poster {
+    width: 45px;
+}
+.scaff.items .item .poster {
+    flex-shrink: 0;
+    width: 60px;
+    position: relative;
+}
+.scaff.items .item .poster span {
+    position: relative;
+    width: 100%;
+    padding-bottom: 130%;
+    display: block;
+}
+.scaff.items .item .poster span img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+#search .search-popup .body .items .item .info {
+    margin-left: 10px;
+}
+.scaff.items .item .info .name {
+    color: #aaa;
+    font-weight: 500;
+    margin-bottom: 6px;
+    display: block;
+    font-size: 1.2rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    line-height: 1.5rem;
+    max-height: 3rem;
+    overflow: hidden;
+}
+.scaff.items .item .info .meta {
+    color: #515151;
+    font-size: 1rem;
+}
+.text-gray2 {
+    color: #777!important;
+}
+
+#search .search-popup .body .items .item:hover {
+    background-color: #791cfb21;
+}

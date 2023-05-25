@@ -1,0 +1,18 @@
+{
+    "task":"ranking",
+    "loss_type":"bpr",
+    "embed_size":16,
+    "n_epochs":10,
+    "lr":0.001,
+    "lr_decay":false,
+    "epsilon":1e-05,
+    "reg":null,
+    "batch_size":256,
+    "num_neg":1,
+    "use_tf":true,
+    "seed":42,
+    "lower_upper_bound":null,
+    "tf_sess_config":null,
+    "optimizer":"adam",
+    "num_threads":1
+}

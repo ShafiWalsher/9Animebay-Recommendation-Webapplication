@@ -1,0 +1,52 @@
+#body{
+    padding-top: 80px;
+    background-color: #0E0E0E;
+    font-family: 'Nunito', 'Open Sans', sans-serif;
+}
+
+#body .content .headding{
+    font-weight: 600;
+    font-size: 2.5rem;
+}
+
+#body .content .sub-headding {
+    font-weight: 400;
+    margin-top: 3rem;
+}
+
+#body .content p {
+    color: #a5a5a5;
+    margin: 10px 0;
+    font-size: 1rem;
+}
+
+#body .content ul>li{
+    color: #a5a5a5;
+}
+
+
+/* ==================================== Recommendation System Notice ==================================== */
+#body .content .notice-reco{
+    padding: 20px 10px;
+    background-color: #040404;
+    border-radius: 10px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+#body .content .notice-reco .anime-icon{
+    background: url('../assets/anime-icon.png') no-repeat;
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+}
+
+#body .content .notice-reco .notice-reco-text{
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+
+.results .info{
+    font-size: 1.2rem;
+}

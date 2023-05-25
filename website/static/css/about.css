@@ -1,0 +1,94 @@
+#body{
+    padding-top: 80px;
+    background-color: #0E0E0E;
+    font-family: 'Nunito', 'Open Sans', sans-serif;
+    min-height: 100vh;
+}
+
+#body .content .headding{
+    font-weight: 600;
+    font-size: 2.5rem;
+}
+
+#body .content .sub-headding {
+    font-weight: 400;
+    margin-top: 3rem;
+}
+
+#body .content p {
+    color: #a5a5a5;
+    margin: 0;
+    font-size: 1rem;
+}
+
+.profile-card{
+    margin-top: 5rem;
+    max-width: 600px;
+    min-width: 300px;
+}
+.profile-card .profile .info{
+    font-weight: 300;
+    text-align: left;
+}
+
+.profile-card .name{
+    font-weight: 600;
+    color: #ffffff !important;
+    font-size: 1.5rem !important;
+}
+
+.profile-card .profile{
+    /* background-color: #1C1C1C; */
+    background: linear-gradient(140deg, rgba(28,28,28,0.35) 70%, rgba(255,255,255,0.1) 70%);
+    padding: 30px 20px;
+    border-radius: 10px;
+    border: 3px solid #834FD6;
+    position: relative;
+    box-shadow: 0px 0px 20px rgba(213, 213, 213, 0.1);
+}
+
+.profile-card .profile .info .major{
+    color:#fbc32e !important;
+    font-size: 0.8rem !important;
+}
+
+.profile-card .profile .info .usn{
+    font-weight: 600;
+}
+
+.profile-card .profile .avatar{
+    margin-right: 30px;
+}
+
+.profile-card .profile .info .social-icons a, .fa-icon{
+    color: #a5a5a5;
+    font-size: 1.5rem;
+    padding: 10px 0;
+    /* margin: 16px 10px 0 0; */
+}
+.profile-card .profile .info .d-flex{
+    gap:20px;
+}
+
+
+
+/* ==================================== Recommendation System Notice ==================================== */
+#body .content .notice-reco{
+    padding: 20px 10px;
+    background-color: #040404;
+    border-radius: 10px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+#body .content .notice-reco .anime-icon{
+    background: url('../assets/anime-icon.png') no-repeat;
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+}
+
+#body .content .notice-reco .notice-reco-text{
+    font-size: 1.2rem;
+    font-weight: 600;
+}

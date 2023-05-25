@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block title%}9Animebay - Results{%endblock%}
+
+{%block styles%}
+<link rel="stylesheet" href="../static/css/results.css">
+{%endblock%}
+
+{% block body %}
+<section id="body">
+    <div class="container-xl py-5">
+      <div class="content text-white row justify-content-center align-items-center text-left">
+        <div class="results col-md-8">
+          <h2 class="headding text-center">Visualization of Evaluation Metic Results of Collaboative Filtering Recommendation Models</h2>
+          <hr style="width: 50%; margin: auto; background-color: #aaa; height: 3px; border-radius: 50%;" />
+          <p class="mt-4">
+            The below plot that compares the performance of four different recommendation models on six evaluation metrics. These models include two collaborative filtering models (NCF) and two Bayesian personalized ranking models (BPR) for anime and movie recommendations. The evaluation metrics used are loss, ROC AUC, precision, recall, MAP, and NDCG. The resulting plot allows for a visual comparison of each model's performance on each metric, providing insight into their overall effectiveness for recommendation tasks.
+          </p>
+          <div class="notice-reco mt-5"><div class="anime-icon"></div><div class="notice-reco-text">Check out our NCF and BPR Recommendation System <a href="/recommend">Click Here</a></div></div>
+          <div class="my-3">
+            <img src="../static/assets/Anime_ncf_bpr_viz.png" alt="Anime_ncf_bpr_viz" class="img-fluid">
+            <img src="../static/assets/Movie_ncf_bpr_viz.png" alt="Movie_ncf_bpr_viz" class="img-fluid">
+          </div>
+
+          <div class="info">
+            <h5><b>Models:</b></h5>
+            <ul>
+              <li><b>Anime NCF:</b> a neural collaborative filtering model for anime recommendations.</li>
+              <li><b>Anime BPR:</b> a Bayesian personalized ranking model for anime recommendations.</li>
+              <li><b>Movie NCF:</b> a neural collaborative filtering model for movie recommendations.</li>
+              <li><b>Movie BPR:</b> a Bayesian personalized ranking model for movie recommendations.</li>
+            </ul>
+            <h5><b>Metrics:</b></h5>
+            <ul>
+              <li><b>Loss:</b> the loss function used to train the models.</li>
+              <li><b>ROC AUC:</b> the area under the receiver operating characteristic curve, which measures the ability of the model to distinguish between positive and negative examples.</li>
+              <li><b>Precision:</b> the fraction of relevant instances among the retrieved instances.</li>
+              <li><b>Recall:</b> the fraction of relevant instances that have been retrieved over the total amount of relevant instances.</li>
+              <li><b>MAP (Mean Average Precision):</b> the average of the average precisions calculated for each query.</li>
+              <li><b>NDCG (Normalized Discounted Cumulative Gain):</b> a measure of ranking quality that takes into account the position of relevant items in the ranking.</li>
+            </ul>
+            <p>The plot shows how each model performs on each metric, allowing for comparison and evaluation of their overall performance.</p> 
+          </div> 
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

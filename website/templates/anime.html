@@ -1,0 +1,151 @@
+{% extends "base.html" %}
+{% block title%}9Animebay - {{ anime_details['title'] }}{%endblock%}
+
+{%block styles%}
+<link rel="stylesheet" href="../static/css/anime.css" />
+{%endblock%}
+
+
+{% block body %}
+<section id="body">
+	<div class="container">
+		<div class="aside-wrapper">
+			<aside class="main">
+				<!-- Anime Details -->
+				<section id="anime-details" class="d-flex justify-content-start">
+					<div class="anime-poster">
+						<img src="{{ anime_details['image_url'] }}" alt="{{ anime_details['title'] }}">
+					</div>
+					<div class="info ms-5 px-5 row align-items-between">
+						<div class="head row">
+							<div class="top-details">
+								<div class="title-en">{{ anime_details['title'] }}</div>
+								<div class="title-jp">{{ anime_details['title_japanese'] }}</div>
+								<div class="meta icons mt-3">
+									<i class="rating">{{ anime_details['rating'] }}</i>
+									<i class="date">{{ anime_details['date'] }}</i>
+								</div>
+							</div>
+						</div>
+						<div class="details row mt-auto">
+							<div class="ani-details d-flex justify-content-start align-items-end">
+								<div class="items-wrapper">
+									<div class="category">Type: <span class="category-value" style="color: #a885da;">{{ anime_details['type'] }}</span></div>
+									<div class="category">Premiered: <span class="category-value" style="color: #a885da;">{{ anime_details['premiere'] }}</span></div>
+									<div class="category">Date aired: <span class="category-value">{{ anime_details['aire'] }}</span></div>
+									<div class="category">Status: <span class="category-value">{{ anime_details['status'] }}</span></div>
+									<div class="category">Genres: <span class="category-value" style="color: #a885da;">{{ anime_details['genres'] }}</span></div>
+								</div>
+								<div class="items-wrapper">
+									<div class="category">Rating: <span class="category-value" style="color: #a885da;">{{ anime_details['score'] }}</span> by <span style="font-size: 0.95rem;">{{ anime_details['scored_by'] }}</span> users</div>
+									<div class="category">Episodes: <span class="category-value">{{ anime_details['episodes'] }}</span></div>
+									<div class="category">Duration: <span class="category-value">{{ anime_details['duration'] }}</span></div>
+									<div class="category">Source: <span class="category-value">{{ anime_details['source'] }}</span></div>
+									<div class="category">Studios: <span class="category-value" style="color: #a885da;">{{ anime_details['studios'] }}</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- Synopis -->
+				<section id="more-info" class="container m-0 p-0">
+					<div class="more-info">
+						<div class="head">
+							<div class="title">Synopsis</div>
+						</div>
+						<div class="body">
+							<div class="synopsis">
+								<p class="synopsis-text">
+									Sixteen-year-old Ai Hoshino is a talented and beautiful idol who is adored by her fans. She is the
+									personification of a pure, young maiden. But all that glitters is not gold. Gorou Amemiya is a
+									countryside gynecologist and a big fan of Ai. So when the pregnant idol shows up at his hospital, he
+									is beyond bewildered. Gorou promises her a safe delivery. Little does he know, an encounter with a
+									mysterious figure would result in his untimely death—or so he thought. Opening his eyes in the lap of
+									his beloved idol, Gorou finds that he has been reborn as Aquamarine Hoshino—Ai's newborn son! With his
+									world turned upside down, Gorou soon learns that the world of showbiz is paved with thorns, where
+									talent does not always beget success. Will he manage to protect Ai's smile that he loves so much with
+									the help of an eccentric and unexpected ally?
+								</p>
+							</div>
+						</div>
+					</div>
+				</section>
+			</aside>
+			<!-- Favorited Section -->
+			<aside class="sidebar" style="height: fit-content;">
+				<section id="favorite" class="w-side-section">
+					<div class="head">
+						<div class="title">Most Favorited Animes</div>
+					</div>
+					<div class="body">
+						{% for j in range(2) %}
+						<div class="row justify-content-center align-items-center mb-4" style="margin: 0;">
+							{% for i in range(2) %}
+							{% set index = j*6 + i %}
+							<a href="{{ url_for('routes.anime', anime_id=fav_animes[index]['anime_id'], title=fav_animes[index]['title']) }}" class="poster-wrapper col p-0">
+								<div class="poster-img">
+									<img src="{{ fav_animes[index]['image_url'] }}"
+										alt="{{ fav_animes[index]['title'] }}">
+								</div>
+							</a>
+							{% endfor %}
+						</div>
+						{% endfor %}
+					</div>
+				</section>
+			</aside>
+		</div>
+	</div>
+
+	<!-- Recommended Section -->
+	{%if reco_animes%}
+	<div class="container mt-5 recommended">
+		<div class="head">
+			<div class="title" style="line-height: 1;">Recommended Animes</div>
+			<hr style="background-color: #ddd; height: 3px; width: 40%;">
+		</div>
+		<!-- {%if reco_animes%} -->
+		<div class="body mt-5">
+			<div class="anime-items">
+				<div class="row">
+					{%for j in range(2)%}
+					<div class="col">
+						{%for i in range(5)%}
+						{% set index = j*5 + i %}
+						{% if index < reco_animes|length %}
+						<a class="item" href="{{ url_for('routes.anime', anime_id=reco_animes[index]['anime_id'], title=reco_animes[index]['title']) }}">
+							<div class="inner">
+								<div class="poster">
+									<span><img src="{{ reco_animes[index]['image_url'] }}" alt="{{ reco_animes[index]['title'] }}"></span>
+								</div>
+								<div class="info my-auto">
+									<div class="name d-title">{{ reco_animes[index]['title'] }}</div>
+									<div class="meta">
+										<span class="dot"><span class="meta-color">{{ reco_animes[index]['type'] }}</span> </span>
+										<span class="dot"> <span class="meta-color">Eps. {{ reco_animes[index]['episodes'] }}</span></span>
+										<span class="dot"><i class="fa-solid fa-heart meta-color"></i> <span class="meta-color">{{ reco_animes[index]['favorites'] }}</span></span>
+										<span class="dot"> <span class="meta-color">{{ reco_animes[index]['rating'] }}</span></span>
+									</div>
+									<span>Rating: <span class="meta-color-score">{{ reco_animes[index]['score'] }}</span></span>
+									<span>Status: <span class="meta-color-purple">{{ reco_animes[index]['status'] }}</span></span>
+									<span>Genres: <span class="meta-color-purple">{{ reco_animes[index]['genres'] }}</span></span>
+								</div>
+							</div>
+						</a>
+						{% endif %}
+						{%endfor%}
+					</div>
+					{%endfor%}
+				</div>
+			</div>
+		</div>
+		<!-- {%else%}
+		<div class="body mt-5">
+			<p><i> No Recommmended Animes... </i></p>
+		</div>
+		{%endif%} -->
+	</div>
+	{%endif%}
+</section>
+{%endblock%}

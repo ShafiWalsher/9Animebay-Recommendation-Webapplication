@@ -1,0 +1,160 @@
+{% extends "base.html" %}
+{% block title%}9Animebay - Project Details{%endblock%}
+
+{%block styles%}
+<link rel="stylesheet" href="../static/css/project-details.css" />
+{%endblock%}
+
+{% block body %}
+<section id="body">
+	<div class="container-xl py-5">
+		<div class="content text-white row justify-content-center align-items-center text-left">
+			<div class="col-md-8 text-center">
+				<h1 class="project-title">Personalized Recommendation System Using Deep Learning(NCF) and Bayesian Learning(BPR)</h1>
+				<hr style="width: 70%; margin: auto; background-color: #aaa; height: 3px; border-radius: 50%;" />
+				<nav class="table-content row me-auto my-5">
+					<div class="list-group col-md-4 text-nowrap">
+						<p class="nav-link list-group-item table-content-header">Table of Contents</p>
+						<a class="nav-link list-group-item" href="#introduction">1. Introduction</a>
+						<a class="nav-link list-group-item" href="#ncf-model">2. NCF Model</a>
+						<a class="nav-link list-group-item" href="#bpr-model">3. BPR Model</a>
+						<a class="nav-link list-group-item" href="#methodology">4. Methodology</a>
+						<a class="nav-link list-group-item" href="#results-analysis">5. Results and Analysis</a>
+						<a class="nav-link list-group-item no-chapter" href="#conclusion">Conclusion</a>
+						<a class="nav-link list-group-item no-chapter" href="#references">References</a>
+						<a class="nav-link list-group-item no-chapter" href="#acknowledgements">Acknowledgements</a>
+					</div>
+				</nav>
+				<div class="notice-reco"><div class="anime-icon"></div><div class="notice-reco-text">Check out our NCF and BPR Recommendation System <a href="/recommend">Click Here</a></div></div>
+				<main>
+					<section id="introduction">
+						<h2 class="chapter-heading">1/ Introduction</h2>
+						<p class="text">The project is a recommendation system developed using Neural Collaborative Filtering (NCF) and Bayesian Personalized Ranking (BPR) models. The system is designed to provide personalized recommendations to users based on their preferences and past behavior.</p>
+						<p class="text">With the vast amount of information available online, it can be overwhelming for users to find relevant content. Recommendation systems help users discover new content and products by providing personalized suggestions based on their interests and behavior.</p>
+						<p class="text">The main goal of this project is to develop a recommendation system that provides accurate and effective recommendations to users. We aim to achieve this by using two popular models - NCF and BPR - and comparing their performance to identify the best approach for recommendation systems.</p>
+					</section>
+					<section id="ncf-model">
+						<h2 class="chapter-heading">2/ Neural Collaborative Filtering Model</h2>
+						<p class="text">The Neural Collaborative Filtering (NCF) model is a type of deep learning model that uses neural networks to predict user-item interactions. It combines both user and item features to learn their latent representations, and then predicts the likelihood of a user interacting with an item based on those representations.</p>
+						<p class="text">NCF has shown to be effective in recommendation systems because it can handle large and sparse datasets, and can learn complex non-linear relationships between users and items. It can also incorporate additional features, such as contextual and temporal information, to improve the accuracy of recommendations.</p>
+						<p class="text">Some examples of NCF model recommendations include recommending movies to users based on their past viewing behavior, suggesting products to users based on their previous purchases, and suggesting songs to users based on their listening history.</p>
+					</section>
+					<section id="bpr-model">
+						<h2 class="chapter-heading">3/ Bayesian Personalized Ranking Model</h2>
+						<p class="text">The Bayesian Personalized Ranking (BPR) model is a matrix factorization approach that learns latent representations of users and items by optimizing a pairwise ranking objective function. The objective function tries to maximize the difference between the predicted scores of positive and negative interactions for a given user.</p>
+						<p class="text">BPR has several benefits for recommendation systems. It is scalable, can handle implicit feedback, and can capture user preferences in a personalized manner. It is also effective in situations where only positive feedback is available, which is common in many real-world recommendation systems.</p>
+						<p class="text">Some examples of BPR model recommendations include recommending products to users based on their previous purchases, suggesting news articles to users based on their reading history, and suggesting social connections to users based on their social network behavior.</p>
+					</section>
+					<section id="methodology">
+						<h2 class="chapter-heading">4/ Methodology</h2>
+						<p class="text">The project was developed in several stages, including data collection, preprocessing, model training, and evaluation. The NCF and BPR models were implemented using Python and the TensorFlow library.</p>
+						<p class="text">The project used various tools and technologies, including Python programming language, TensorFlow library, Pandas and NumPy data analysis libraries, and Jupyter Notebook for experimentation and analysis.</p>
+						<p class="text">The project used a publicly available dataset from the MovieLens website, which contains ratings data for movies by users. The dataset was preprocessed and split into training and testing sets for model development and evaluation.</p>
+					</section>
+					<section id="results-analysis">
+						<h2 class="chapter-heading">5/ Results and Analysis</h2>
+						<p class="text">Both the NCF and BPR models were trained and evaluated on the MovieLens dataset. The evaluation metrics used included accuracy, precision, recall, and F1 score. The results showed that both models performed well, with the NCF model achieving slightly higher accuracy than the BPR model.</p>
+						<p class="text">The accuracy and effectiveness of the recommendations generated by each model were compared using the evaluation metrics mentioned above. The NCF model was found to perform slightly better than the BPR model, indicating that the use of neural networks can improve the accuracy of recommendation systems.</p>
+						<p class="text">The NCF and BPR approaches were compared in terms of their strengths and weaknesses for recommendation systems. While both models were found to be effective, they have different strengths and weaknesses. The NCF model is better suited for handling complex non-linear relationships and incorporating additional features, while the BPR model is better suited for handling implicit feedback and personalized recommendations.</p>
+						<div class="table-responsive-md mx-5">
+							<table class="table caption-top">
+								<caption>1/ Neural Collaborative Filtering (NCF)</caption>
+								<thead>
+								  <tr>
+									<th scope="col">Dataset</th>
+									<th scope="col">Train Loss</th>
+									<th scope="col">ROC_AUC</th>
+									<th scope="col">RECISION</th>
+									<th scope="col">RECALL</th>
+									<th scope="col">MAP</th>
+									<th scope="col">NDCG</th>
+								  </tr>
+								</thead>
+								<tbody>
+								  <tr>
+									<th scope="row" class="dataset-name">Anime</th>
+									<td><p>0.2449</p></td>
+									<td><p>0.9642</p></td>
+									<td><p>0.1513</p></td>
+									<td><p>0.1108</p></td>
+									<td><p>0.3020</p></td>
+									<td><p>0.4053</p></td>
+								  </tr>
+								  <tr>
+									<th scope="row" class="dataset-name">Movies</th>
+									<td><p>0.8228</p></td>
+									<td><p>0.8729</p></td>
+									<td><p>0.0035</p></td>
+									<td><p>0.0110</p></td>
+									<td><p>0.0088</p></td>
+									<td><p>0.0127</p></td>
+								  </tr>
+								</tbody>
+							  </table>
+						</div>
+						<div class="table-responsive-md mx-5">
+							<table class="table caption-top">
+								<caption>2/ Bayesian Personalized Ranking (BPR)</caption>
+								<thead>
+								  <tr>
+									<th scope="col">Dataset</th>
+									<th scope="col">Train Loss</th>
+									<th scope="col">ROC_AUC</th>
+									<th scope="col">RECISION</th>
+									<th scope="col">RECALL</th>
+									<th scope="col">MAP</th>
+									<th scope="col">NDCG</th>
+								  </tr>
+								</thead>
+								<tbody>
+								  <tr>
+									<th scope="row" class="dataset-name">Anime</th>
+									<td><p>0.2640</p></td>
+									<td><p>0.9618</p></td>
+									<td><p>0.1254</p></td>
+									<td><p>0.1548</p></td>
+									<td><p>0.2938</p></td>
+									<td><p>0.3917</p></td>
+								  </tr>
+								  <tr>
+									<th scope="row" class="dataset-name">Movies</th>
+									<td><p>0.5417</p></td>
+									<td><p>0.9237</p></td>
+									<td><p>0.0022</p></td>
+									<td><p>0.0131</p></td>
+									<td><p>0.0069</p></td>
+									<td><p>0.0104</p></td>
+								  </tr>
+								</tbody>
+							  </table>
+						</div>
+						<p class="text">Check out metric evaluaion, <a href="/results" class="button">Here</a>.</p>
+					</section>
+					<section id="conclusion">
+						<h2 class="chapter-heading">Conclusion</h2>
+						<p class="text">The project developed and evaluated two recommendation models, NCF and BPR, on the MovieLens dataset. Both models were found to be effective, with the NCF model achieving slightly higher accuracy than the BPR model. The project demonstrated the importance and potential of recommendation systems in today's digital landscape.</p>
+						<p class="text">There is scope for further work and improvements to the NCF and BPR models. For example, incorporating additional features such as user demographics or item metadata could improve the accuracy and personalization of the recommendations. Additionally, exploring other matrix factorization and deep learning approaches could lead to further improvements.</p>
+					</section>
+					<section id="references">
+						<h2 class="chapter-heading">References</h2>
+						<p class="text"><span class="ref-num">[1]</span> <span class="ref-author">He, X.</span>, <span class="ref-author">Liao, L.</span>,<span class="ref-author">Zhang, H.</span>, <span class="ref-author">Nie, L.</span>, & <span class="ref-author">Hu, X.</span> Neural collaborative filtering. In <i>Proceedings of the 26th International Conference on World Wide Web</i> (pp. 173-182) <b>(2017)</b>. ACM. <a href="https://arxiv.org/abs/1708.05031v2" class="ref-link">arXiv:1708.05031v2</a></p>
+
+						<p class="text"><span class="ref-num">[2]</span> <span class="ref-author">Rendle, S.</span>, <span class="ref-author">Freudenthaler, C.</span>, <span class="ref-author">Gantner, Z.</span>, & <span class="ref-author">Schmidt-Thieme, L.</span>. BPR: Bayesian personalized ranking from implicit feedback. In <i>Proceedings of the Twenty-Fifth Conference on Uncertainty in Artificial Intelligence</i> (pp. 452-461), <b>(2012)</b>. AUAI Press. <a href="https://arxiv.org/abs/1205.2618v1" class="ref-link">arXiv:1205.2618v1</a></p>
+					</section>
+					<section id="acknowledgements">
+						<h2 class="chapter-heading">Acknowledgements</h2>
+						<p class="text">I would like to express my sincere gratitude to all those who have contributed to the successful completion of this project. First and foremost, I would like to thank my college for providing me with the resources and facilities necessary to carry out this research.</p>
+
+						<p class="text">We are grateful to my project guide, <i>Dr. Arun Kumar R</i>, for their invaluable guidance, support, and encouragement throughout this project. Their insights, suggestions, and constructive criticism have been instrumental in shaping the direction and focus of this research.</p>
+					</section>
+					<section id="team-information">
+						<h2 class="chapter-heading">Team Information</h2>
+						<p class="text">Our project was developed by a team of four final-year engineering students. Check out project team details, <a href="/about-us" class="button">Here</a>.</p>
+					</section>
+				</main>
+			</div>
+		</div>
+	</div>
+</section>
+
+{%endblock%}

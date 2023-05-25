@@ -1,0 +1,176 @@
+#body{
+    padding: 80px;
+    background-color: #0E0E0E;
+    font-family: 'Nunito', 'Open Sans', sans-serif;
+}
+
+#body .content .headding{
+    font-weight: 600;
+    font-size: 2.5rem;
+}
+
+#body .content .sub-headding {
+    font-weight: 400;
+    margin-top: 3rem;
+}
+
+#body .content p {
+    color: #a5a5a5;
+    margin: 10px 0;
+    font-size: 1rem;
+}
+
+#getReco .form-floating input, #getReco .form-floating select{
+    background-color: #222;
+    border: none !important;
+    color: #ddd;
+    outline: none;
+}
+
+span.sub-label{
+    opacity: 0.7;
+}
+
+
+#getReco .form-floating input:focus + label,
+#getReco .form-floating input + label,
+#getReco .form-floating select:focus + label,
+#getReco .form-floating select + label{
+    color: #fbc32e;
+}
+#getReco .form-floating input:focus + label::after,
+#getReco .form-floating input + label::after,
+#getReco .form-floating input:focus + label::after,
+#getReco .form-floating select + label::after{
+    background: #222;
+}
+
+
+#getReco .form-group .sub-btn{
+    background-color: #812bf9;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    border-bottom: 2px solid #fbc32e;
+    padding: 10px 16px;
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: #ddd;
+}
+#getReco .form-group .sub-btn:hover{
+    background-color: #791cfb;
+}
+
+/* ==================== More Info ======================= */
+
+.recommended .head .title {
+    margin: 0;
+    padding: 0;
+    font-size: 2.5rem;
+    font-weight: 600;
+    white-space: nowrap;
+    color: #ddd;
+}
+
+
+/* ==================== RECOMMENDED ITEMS ==================== */
+.anime-items .item {
+    display: flex;
+    margin-bottom: 10px;
+    position: relative;
+}
+.anime-items .item .inner {
+    background: #1c1c1c;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: all .2s;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 200px;
+    border-right: 5px solid #fbc32e;
+    transition: all 0.3 ease-in-out;
+}
+.anime-items .item .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center !important;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+}
+.anime-items .item .info .name {
+    color: #ddd;
+    font-weight: 500;
+    margin-bottom: 6px;
+    display: block;
+    font-size: 1.65rem;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    line-height: 2rem;
+    /* max-height: 3rem; */
+    overflow: hidden;
+    transition: color .5 ease-in-out;
+}
+
+.anime-items .item .info .meta {
+    color: #515151;
+    font-size: 1.2rem;
+}
+
+.dot+.dot:before {
+    content: "";
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #515151;
+    vertical-align: middle;
+    display: inline-block;
+    margin-left: 5px;
+    margin-right: 8px;
+}
+
+/* Poster */
+.anime-items .item .poster {
+  flex-shrink: 0;
+  height: 100%;
+  width : 140px;
+  position: relative;
+  object-fit: contain;
+}
+.anime-items .item .poster span {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding-bottom: 130%;
+  display: block;
+}
+.anime-items .item .poster span img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+/* COLOR */
+.anime-items .item .info .meta .meta-color{
+    color: #ddd;
+}
+.anime-items .item .info .meta-color-score{
+    color: #fbc32e;
+}
+.anime-items .item .info .meta-color-purple{
+    color: #812bf9;
+}
+
+.anime-items .item:hover{
+    color: #aaa !important;
+}
+
+.anime-items .item .info .name:hover{
+    color: #fbc32e !important;
+}
+
+.anime-items .item .inner:hover{
+    background-color: #252525 ;
+}

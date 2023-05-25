@@ -1,0 +1,2 @@
+model_checkpoint_path: "ncf_model_anime_tf"
+all_model_checkpoint_paths: "ncf_model_anime_tf"
