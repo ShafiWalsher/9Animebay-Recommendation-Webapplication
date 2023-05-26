@@ -6,7 +6,8 @@ MarkupSafe==2.1.2
 numpy
 pandas
 scikit-learn 
-scikit-surprise==1.1.3
-scipy==1.10.0
-tensorflow==2.11.0
+scikit-surprise
+scipy
 requests 
+tensorflow==2.11.0
+torch==2.0.0
